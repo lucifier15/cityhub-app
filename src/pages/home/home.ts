@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController,MenuController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+
+import { UserAccPage } from '../user-acc/user-acc';
 
 @Component({
   selector: 'page-home',
@@ -7,20 +9,12 @@ import { NavController,MenuController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController,public menuCtrl: MenuController) {
+  constructor(public navCtrl: NavController) {
 
   }
 
-   openMenu() {
-   this.menuCtrl.open();
-	 }
-
- closeMenu() {
-   this.menuCtrl.close();
- 	}
-
- toggleMenu() {
-   this.menuCtrl.toggle();
- 	}
+  getUserAcc(){
+  	this.navCtrl.push(UserAccPage);
+  }
 
 }

@@ -14,7 +14,7 @@
       </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="getUserAcc()">
         <ion-icon name="person"></ion-icon>
       </button>
     </ion-buttons>
@@ -51,7 +51,35 @@
 
 
 <!-- content starts -->
-<ion-content padding>
-  
+<ion-content>
+    <ion-content class="card-background-page">
+
+      <ion-row>
+      <ion-card>
+        <img src="http://18.217.70.42/images/cab.jpg"/><!-- 
+        <div class="card-title">São Paulo</div>
+        <div class="card-subtitle">41 Listings</div> -->
+      </ion-card>
+
+      <ion-card>
+        <img src="http://18.217.70.42/images/electrician.jpg"/><!-- 
+        <div class="card-title">Amsterdam</div>
+        <div class="card-subtitle">64 Listings</div> -->
+      </ion-card>
+      </ion-row>
+
+      <ion-card>
+        <img src="http://18.217.70.42/images/tutor.jpg"/><!-- 
+        <div class="card-title">San Francisco</div>
+        <div class="card-subtitle">72 Listings</div> -->
+      </ion-card>
+
+      <ion-card>
+        <img src="http://18.217.70.42/images/slide2.jpeg"/><!-- 
+        <div class="card-title">Madison</div>
+        <div class="card-subtitle">28 Listings</div> -->
+      </ion-card>
+
+  </ion-content>
 </ion-content>
 <!-- content ends -->

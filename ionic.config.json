@@ -1,6 +1,6 @@
 {
   "name": "cityhub",
-  "app_id": "",
+  "app_id": "aedd1a1c",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

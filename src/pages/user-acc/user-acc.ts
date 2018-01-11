@@ -1,0 +1,50 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Validators, FormBuilder, FormGroup,NgForm } from '@angular/forms';
+
+import { AuthService } from '../../services/auth.service';
+
+
+@IonicPage()
+@Component({
+  selector: 'page-user-acc',
+  templateUrl: 'user-acc.html',
+})
+
+
+export class UserAccPage {
+
+  constructor(
+  public navCtrl: NavController,
+   public navParams: NavParams,
+   private authService: AuthService) {
+  }
+
+  signup ={
+    name: '',
+    email: '',
+    password: ''
+  };
+
+  signin ={
+    email1: '',
+    password1: ''
+  };
+  
+  onSignUp(form: NgForm) {
+  	this.authService.signup(form.value.name, form.value.email, form.value.password)
+  	 .subscribe(
+  	 	response => console.log(response),
+  	 	error    => console.log(error)
+  	 );
+  }
+
+  onSignIn(form: NgForm) {
+    this.authService.signin(form.value.email1, form.value.password1)
+     .subscribe(
+      tokenData => console.log(tokenData),
+      error    => console.log(error)
+     );
+  }
+
+}
