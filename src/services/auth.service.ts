@@ -9,13 +9,13 @@ export class AuthService {
 	constructor(private http: Http){}
 
 	signup(name: string,email: string,password: string) {
-		return this.http.post('http://18.217.70.42/cityhub-app-laravel/public/api/user',
+		return this.http.post('http://127.0.0.1:8000/api/user',
 		{name: name,email: email,password: password},
 		{headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})});
 	}
 
 	signin(email1: string,password1: string) {
-		return this.http.post('http://18.217.70.42/cityhub-app-laravel/public/api/user/signin',
+		return this.http.post('http://127.0.0.1:8000/api/user/signin',
 		{email: email1,password: password1},
 		{headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})})
 		.map(

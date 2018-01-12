@@ -8,13 +8,15 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserAccPage } from '../pages/user-acc/user-acc';
+import { MyordersPage } from '../pages/myorders/myorders'
 import { AuthService } from '../services/auth.service';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    UserAccPage
+    UserAccPage,
+    MyordersPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { AuthService } from '../services/auth.service';
   entryComponents: [
     MyApp,
     HomePage,
-    UserAccPage
+    UserAccPage,
+    MyordersPage
   ],
   providers: [
     StatusBar,

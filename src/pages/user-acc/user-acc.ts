@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup,NgForm } from '@angular/forms';
 
 import { AuthService } from '../../services/auth.service';
+import { MyordersPage } from '../myorders/myorders';
 
 
 @IonicPage()
@@ -17,7 +18,9 @@ export class UserAccPage {
   constructor(
   public navCtrl: NavController,
    public navParams: NavParams,
-   private authService: AuthService) {
+   private authService: AuthService,
+   public toastCtrl: ToastController
+   ) {
   }
 
   signup ={
@@ -37,6 +40,17 @@ export class UserAccPage {
   	 	response => console.log(response),
   	 	error    => console.log(error)
   	 );
+     let toast = this.toastCtrl.create({
+     message: 'Registartion Successful',
+     duration: '3000',
+     position: 'bottom'
+     });
+
+     toast.onDidDismiss(()=> {
+     console.log('Dismissed toast');
+     });
+
+     toast.present();
   }
 
   onSignIn(form: NgForm) {
@@ -45,6 +59,10 @@ export class UserAccPage {
       tokenData => console.log(tokenData),
       error    => console.log(error)
      );
+  }
+
+  myOrders(){
+    this.navCtrl.push(MyordersPage);
   }
 
 }
