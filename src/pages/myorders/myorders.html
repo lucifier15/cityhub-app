@@ -14,5 +14,18 @@
 
 
 <ion-content padding>
-
+   <ion-buttons>
+   	<button ion-button (click)="getOrders()">Get orders</button>
+   </ion-buttons>
+   <!-- <p *ngFor="let order of orders">{{order.name}}</p> -->
+   <ion-card *ngFor="let order of orders">
+	  <ion-card-header>
+	    <h4>{{order.service}}</h4>
+	  </ion-card-header>
+	  <ion-card-content>
+	    <p>{{order.name}}</p>
+	    <p>{{order.created_at}}</p>
+	    <p>{{order.answers}}</p>
+	  </ion-card-content>
+	</ion-card>
 </ion-content>

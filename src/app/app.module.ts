@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { UserAccPage } from '../pages/user-acc/user-acc';
 import { MyordersPage } from '../pages/myorders/myorders'
 import { AuthService } from '../services/auth.service';
+import { OrdersService } from '../services/orders.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AuthService } from '../services/auth.service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    OrdersService
   ]
 })
 export class AppModule {}

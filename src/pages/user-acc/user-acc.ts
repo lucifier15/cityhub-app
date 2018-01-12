@@ -40,17 +40,6 @@ export class UserAccPage {
   	 	response => console.log(response),
   	 	error    => console.log(error)
   	 );
-     let toast = this.toastCtrl.create({
-     message: 'Registartion Successful',
-     duration: '3000',
-     position: 'bottom'
-     });
-
-     toast.onDidDismiss(()=> {
-     console.log('Dismissed toast');
-     });
-
-     toast.present();
   }
 
   onSignIn(form: NgForm) {
