@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { ServicesService } from '../../services/services.service';
-import { Services } from '../../orders.interface';
+import { ServiceService } from '../../services/service.service';
+import { Service } from '../../orders.interface';
 
 
 
@@ -12,19 +12,21 @@ import { Services } from '../../orders.interface';
   templateUrl: 'service.html',
 })
 export class ServicePage {
-
+  
+  serv_detail: string;
   constructor(
   public navCtrl: NavController,
    public navParams: NavParams,
-   private servicesService: ServicesService) {
+   private serviceService: ServiceService) {
+    this.serv_detail = this.navParams.data.title;
   }
 
-  services: Services[];
+  service: Service[];
 
   ionViewDidEnter(){
-  	this.servicesService.displayServices()
+  	this.serviceService.getService(this.serv_detail)
   		.subscribe(
-  			(services: Services) => this.services = services,
+  			(service: Service[]) => this.service = service,
   			(error: Response) => console.log(error)
   		);
   }

@@ -13,6 +13,7 @@ import { AuthService } from '../services/auth.service';
 import { OrdersService } from '../services/orders.service';
 import { ServicePage } from '../pages/service/service';
 import { ServicesService } from '../services/services.service';
+import { ServiceService } from '../services/service.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ServicesService } from '../services/services.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     OrdersService,
-    ServicesService
+    ServicesService,
+    ServiceService
   ]
 })
 export class AppModule {}

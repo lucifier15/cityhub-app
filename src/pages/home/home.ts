@@ -30,8 +30,8 @@ export class HomePage {
   	this.navCtrl.push(UserAccPage);
   }
 
-  getService(){
-  	this.navCtrl.push(ServicePage);
+  getService(service){
+  	this.navCtrl.push(ServicePage,service);
   }
 
 

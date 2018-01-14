@@ -54,7 +54,7 @@
 <ion-content>
   <ion-card *ngFor="let service of services">
     <p>{{service.title}}</p>
-    <img src="{{'http://18.217.70.42/storage/upload/'+service.img_path}}" (click)="getService()">
+    <img src="{{'http://localhost:4000/storage/upload/'+service.img_path}}" (click)="getService(service)">
   </ion-card>
 </ion-content>
 <!-- content ends -->
