@@ -26,7 +26,7 @@
   <!-- treding icons start-->
   <ion-row class="trending">
     <ion-buttons>
-      <button ion-button icon-only margin-left class="trending_buttons">
+      <button ion-button icon-only margin-left class="trending_buttons" (click)="getService()">
         <ion-icon name="car"></ion-icon>
       </button>
     </ion-buttons>
@@ -52,34 +52,9 @@
 
 <!-- content starts -->
 <ion-content>
-    <ion-content class="card-background-page">
-
-      <ion-row>
-      <ion-card>
-        <img src="http://18.217.70.42/images/cab.jpg"/><!-- 
-        <div class="card-title">São Paulo</div>
-        <div class="card-subtitle">41 Listings</div> -->
-      </ion-card>
-
-      <ion-card>
-        <img src="http://18.217.70.42/images/electrician.jpg"/><!-- 
-        <div class="card-title">Amsterdam</div>
-        <div class="card-subtitle">64 Listings</div> -->
-      </ion-card>
-      </ion-row>
-
-      <ion-card>
-        <img src="http://18.217.70.42/images/tutor.jpg"/><!-- 
-        <div class="card-title">San Francisco</div>
-        <div class="card-subtitle">72 Listings</div> -->
-      </ion-card>
-
-      <ion-card>
-        <img src="http://18.217.70.42/images/slide2.jpeg"/><!-- 
-        <div class="card-title">Madison</div>
-        <div class="card-subtitle">28 Listings</div> -->
-      </ion-card>
-
-  </ion-content>
+  <ion-card *ngFor="let service of services">
+    <p>{{service.title}}</p>
+    <img src="{{'http://18.217.70.42/storage/upload/'+service.img_path}}" (click)="getService()">
+  </ion-card>
 </ion-content>
 <!-- content ends -->

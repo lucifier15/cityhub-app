@@ -11,13 +11,16 @@ import { UserAccPage } from '../pages/user-acc/user-acc';
 import { MyordersPage } from '../pages/myorders/myorders'
 import { AuthService } from '../services/auth.service';
 import { OrdersService } from '../services/orders.service';
+import { ServicePage } from '../pages/service/service';
+import { ServicesService } from '../services/services.service';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     UserAccPage,
-    MyordersPage
+    MyordersPage,
+    ServicePage
   ],
   imports: [
     BrowserModule,
@@ -29,14 +32,16 @@ import { OrdersService } from '../services/orders.service';
     MyApp,
     HomePage,
     UserAccPage,
-    MyordersPage
+    MyordersPage,
+    ServicePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    OrdersService
+    OrdersService,
+    ServicesService
   ]
 })
 export class AppModule {}

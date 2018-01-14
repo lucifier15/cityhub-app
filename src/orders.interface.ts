@@ -16,3 +16,10 @@ export interface Orders{
 	answers: string;
 	created_at: string;
 }
+
+export interface Services{
+	id: number;
+	img_path: string;
+	title: string;
+	created_at: string;
+}
