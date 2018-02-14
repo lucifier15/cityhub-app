@@ -15,4 +15,13 @@ export class ServiceService{
 				}
 			);
 	}
+
+	getOptions(serv_detail){
+		return this.http.get('http://127.0.0.1:8000/api/getOptions/'+serv_detail)
+			.map(
+				(response: Response) => {
+					return response.json().options;
+				}
+			);
+	}
 }

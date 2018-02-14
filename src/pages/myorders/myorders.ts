@@ -21,7 +21,7 @@ export class MyordersPage {
    private ordersService: OrdersService,
    ) {}
 
-  ionViewDidEnter(){
+  ionViewWillEnter(){
   	this.ordersService.getOrders()
   		.subscribe(
   			(orders: Orders[]) => this.orders = orders,

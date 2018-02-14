@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ServiceService } from '../../services/service.service';
 import { Service } from '../../orders.interface';
-
+import { Options } from '../../orders.interface';
 
 
 @IonicPage()
@@ -22,12 +22,24 @@ export class ServicePage {
   }
 
   service: Service[];
+  options: Options[];
 
-  ionViewDidEnter(){
+  ionViewWillEnter(){
   	this.serviceService.getService(this.serv_detail)
   		.subscribe(
   			(service: Service[]) => this.service = service,
   			(error: Response) => console.log(error)
   		);
+
+    this.serviceService.getOptions(this.serv_detail)
+    .subscribe(
+      (options: Options[]) => this.options = options,
+      (error: Response) => console.log(error)
+    );
+  }
+
+  filterItemsofType(type){
+    
+    return this.options.filter(x=> x.question_no == type)
   }
 }

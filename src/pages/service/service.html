@@ -7,14 +7,68 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Cab</ion-title>
+    <ion-title *ngFor="let service of service">{{service.service}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-	<p *ngFor="let service of service">{{ service.service }}</p>
-	<p *ngFor="let service of service">{{ service.question1 }}</p>
-	<p *ngFor="let service of service">{{ service.question2 }}</p>
+	<form *ngFor="let service of service">
+			<ion-item>
+				<ion-label>{{ service.question1 }}</ion-label>
+				<ion-select>
+					<ion-option *ngFor="let option of options">
+						{{ option.option }}
+					</ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label>{{ service.question2 }}</ion-label>
+				<ion-select>
+					<ion-option *ngFor="let option of options">
+						{{ option.option }}
+					</ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label>{{ service.question3 }}</ion-label>
+				<ion-select>
+					<ion-option *ngFor="let option of options">
+						{{ option.option }}
+					</ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label>{{ service.question4 }}</ion-label>
+				<ion-select>
+					<ion-option *ngFor="let option of options">
+						{{ option.option }}
+					</ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label>{{ service.question4 }}</ion-label>
+				<ion-select>
+					<ion-option></ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label>{{ service.question4 }}</ion-label>
+				<ion-select>
+					<ion-option></ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label>{{ service.question4 }}</ion-label>
+				<ion-select>
+					<ion-option></ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<label>Date</label>
+				<input type="date" name="">
+			</ion-item>
+			<button ion-button block>Submit</button>
+	</form>
 </ion-content>

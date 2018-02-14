@@ -38,3 +38,11 @@ export interface Service{
 	question6: string;
 	question7: string;
 }
+
+export interface Options{
+	id: number;
+	service: string;
+	question_no: string;
+	option: string;
+	created_at: string;
+}
